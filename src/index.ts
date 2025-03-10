@@ -1,6 +1,6 @@
 import './scss/styles.scss';
 
-import {AuctionAPI} from "./components/AuctionAPI";
+import {AuctionAPI} from "./components/common/AuctionAPI";
 import {API_URL, CDN_URL} from "./utils/constants";
 import {EventEmitter} from "./components/base/events";
 

@@ -1,5 +1,5 @@
-import { Api, ApiListResponse } from './base/api';
-import {IOrder, IOrderResult, ILot, LotUpdate, IBid} from "../types";
+import { Api, ApiListResponse } from '../base/api';
+import {IOrder, IOrderResult, ILot, LotUpdate, IBid} from "../../types";
 
 export interface IAuctionAPI {
     getLotList: () => Promise<ILot[]>;
