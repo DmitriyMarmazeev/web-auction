@@ -2,6 +2,10 @@ import { ILot, LotStatus } from "../../types";
 import { dayjs, formatNumber } from "../../utils/utils";
 import { Model } from "../base/Model";
 
+export type CatalogChangeEvent = {
+    catalog: LotItem[]
+};
+
 export class LotItem extends Model<ILot> {
   about: string;
   description: string;
