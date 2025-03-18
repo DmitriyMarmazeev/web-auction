@@ -72,11 +72,15 @@ export class App extends Model<IApp> {
 
   validateOrder() {
       const errors: typeof this.formErrors = {};
+      const regex = /^[+\d()\s-]+$/;
       if (!this.order.email) {
           errors.email = 'Необходимо указать email';
       }
       if (!this.order.phone) {
           errors.phone = 'Необходимо указать телефон';
+      }
+      else if (!regex.test(this.order.phone)) {
+        errors.phone = 'Номер телефона может содержать только цифры, +, () и -';
       }
       this.formErrors = errors;
       this.events.emit('formErrors:change', this.formErrors);
