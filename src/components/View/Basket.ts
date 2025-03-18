@@ -50,4 +50,14 @@ export class Basket extends Component<IBasketView> {
   set total(total: number) {
       this.setText(this._total, formatNumber(total));
   }
+
+  toggleButton(total: number | null) {
+    console.log(total);
+    if(total) {
+        this._button.removeAttribute("disabled");
+    }
+    else {
+        this._button.setAttribute("disabled", "true");
+    }
+  }
 }

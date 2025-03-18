@@ -152,6 +152,7 @@ events.on('auction:changed', () => {
                 appData.toggleOrderedLot(item.id, checkbox.checked);
                 basket.total = appData.getTotal();
                 basket.selected = appData.order.items;
+                basket.toggleButton(appData.getTotal());
             }
         });
         return card.render({
