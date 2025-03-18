@@ -53,4 +53,4 @@ yarn build
 
 ## Проет на GitHub Pages
 
-С готовой версией проекта можно ознакомиться по следующей ссылке: [Web-Larek на GitHub Pages](https://dmitriymarmazeev.github.io/web-auction/).
+С готовой версией проекта можно ознакомиться по следующей ссылке: [Web-Auction на GitHub Pages](https://dmitriymarmazeev.github.io/web-auction/).
