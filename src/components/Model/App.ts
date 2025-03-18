@@ -8,13 +8,11 @@ export interface IApp {
   basket: string[];
   preview: string | null;
   order: IOrder | null;
-  loading: boolean;
 }
 
 export class App extends Model<IApp> {
   basket: string[];
   catalog: LotItem[];
-  loading: boolean;
   order: IOrder = {
       email: '',
       phone: '',
