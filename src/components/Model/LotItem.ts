@@ -24,15 +24,19 @@ export class LotItem extends Model<ILot> {
       this.myLastBid = 0;
   }
 
-  placeBid(price: number): void {
-      this.price = price;
-      this.history = [...this.history.slice(1), price];
-      this.myLastBid = price;
-
-      if (price > (this.minPrice * 10)) {
-          this.status = 'closed';
-      }
-      this.emitChanges('auction:changed', { id: this.id, price });
+  placeBid(price: number): boolean {
+    if(price > this.price) {
+        this.price = price;
+        this.history = [...this.history.slice(1), price];
+        this.myLastBid = price;
+  
+        if (price > (this.minPrice * 10)) {
+            this.status = 'closed';
+        }
+        this.emitChanges('auction:changed', { id: this.id, price });
+        return true;
+    }
+    return false;
   }
 
   get isMyBid(): boolean {

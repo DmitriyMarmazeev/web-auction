@@ -177,14 +177,15 @@ events.on('preview:changed', (item: LotItem) => {
         const card = new AuctionItem(cloneTemplate(cardPreviewTemplate));
         const auction = new Auction(cloneTemplate(auctionTemplate), {
             onSubmit: (price) => {
-                item.placeBid(price);
-                auction.render({
-                    status: item.status,
-                    time: item.timeStatus,
-                    label: item.auctionStatus,
-                    nextBid: item.nextBid,
-                    history: item.history
-                });
+                if(item.placeBid(price)){
+                    auction.render({
+                        status: item.status,
+                        time: item.timeStatus,
+                        label: item.auctionStatus,
+                        nextBid: item.nextBid,
+                        history: item.history
+                    });
+                }
             }
         });
 
