@@ -21,6 +21,16 @@
     box-sizing: border-box;
     outline-color: $secondary;
 
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+  
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+
     &:focus {
       outline-style: solid;
     }
